@@ -36,12 +36,12 @@ void main() {
 			}
 			case 4:
 			{
-				printf("\nThe Rectangle has a perimeter of %i\n\n", getPerimeter(&length, &width));
+				printf("\nThe Rectangle has a perimeter of %i\n\n", getPerimeter(length, width));
 				break;
 			}
 			case 5:
 			{
-				printf("\nThe Rectangle has an area of %i\n\n", getArea(&length, &width));
+				printf("\nThe Rectangle has an area of %i\n\n", getArea(length, width));
 				break;
 			}
 			case 6:
@@ -82,13 +82,14 @@ void setWidth(int input, int *width) {
 	}
 }
 
-int getPerimeter(int *length, int *width) {
-	int perimeter = *length + *length + *width;
+int getPerimeter(int length, int width) {
+	//Why on earth were these passs by reference?????
+	int perimeter = (length*2) + (width*2);
 	return perimeter;
 }
 
-int getArea(int *length, int *width) {
-	int area = (*length) * (*width);
+int getArea(int length, int width) {
+	int area = length * width;
 	return area;
 }
 
